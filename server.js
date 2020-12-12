@@ -15,6 +15,9 @@ const express = require("express"),
     app.get("/signup",(req,res)=>{
         res.render("signup");
     });
+    app.get("/about",(req,res)=>{
+        res.render("about");
+    });
 
 
 

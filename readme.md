@@ -12,7 +12,12 @@ should be an social media like website
 - [ ] db models
 - [ ] pug in the db into the server
 -------------------
--things to do
+- things to do
 - [ ] login / sign up page
 - [ ] home page
 - [ ] 
+--------------------------
+### done things
+- stole the navbar and the login form from codepen XD
+- 
+
