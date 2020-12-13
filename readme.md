@@ -5,19 +5,24 @@ should be an social media like website
 - IDEAS
 - [ ]  friends or some kind of contacts
 - [ ] messaging
+    - kinda
 - [ ] *voice*
-----------------------------
+----------------------
 - Things to implement
 - [ ] routes
 - [ ] db models
-- [ ] pug in the db into the server
--------------------
+    - 1 place were all messages go done
+- [x] pug in the db into the server
+----------------------
 - things to do
-- [ ] login / sign up page
+- [x] login / sign up page
+    - [ ] make them work
 - [ ] home page
 - [ ] 
---------------------------
-### done things
+----------------------
+### <p style="color:green">done things<p>
 - stole the navbar and the login form from codepen XD
-- 
-
+- tried to steal a chat template but, failed I falied and the message window is without style
+----------------------
+### <p style="color:red">issues<p>
+- CSS is a mess
