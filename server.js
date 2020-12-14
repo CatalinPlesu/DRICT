@@ -1,8 +1,7 @@
 const express = require("express"),
     mongoose = require("mongoose"),
     bodyparser = require("body-parser"),
-    app = express(),
-    portNumber = 3000;
+    app = express();
     const message = require("./models/messages");
 
 app.set("view engine", "ejs");
@@ -35,14 +34,20 @@ mongoose.connect("mongodb://localhost:27017/drict", {
     app.get("/signup",(req,res)=>{
         res.render("signup");
     });
-    app.get("/about",(req,res)=>{
-        res.render("about");
+app.post("/login", (req, res) => {
+        console.log("login")
+        res.redirect("/");
+    });
+    app.post("/signup",(req,res)=>{
+        console.log("signup");
+        res.redirect("/");
     });
 
 
 
 
-    app.listen(portNumber, function() {
-        console.log(`DRICT listening to port - ${portNumber}`);
+const port = 3000;
+    app.listen(port, function() {
+        console.log(`DRICT listening to port - ${port}`);
     });
     

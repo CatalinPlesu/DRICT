@@ -1,8 +1,40 @@
+* {
+  padding: 0;
+}
+
 .sendmessage {
-	position: fixed;
-	bottom: 0;
+  position: relative;
+  bottom: 0;
 }
-header {
-	position: fixed;
-	top: 0;
+
+.sendmessage input {
+  width: 95%;
+  position: fixed;
+  bottom: 0;
 }
+
+.sendmessage button {
+  width: 5%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  height: 5rem;
+  background-color: #78a3d4;
+  width: 100%;
+}
+
+.header a,
+.header h1 {
+  display: inline;
+}
+
+.header_fix {
+  height: 5rem;
+  width: 100%;
+}
+/*# sourceMappingURL=style.css.map */
