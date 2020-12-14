@@ -3,16 +3,15 @@
 <div class="message_box">
     <%   msg.forEach(msg => {%> 
         <p>
-            <span class="user"><%= msg.name %>  :</span><br>
+            <a class="user" href="#"><%= msg.name %>  :</a><br>
            <%= msg.text %> 
-           <br><span class="time"><%= msg.sent/* .toDateString() */ %>  :</span>
+           <br><span class="time" style="font-size: 11px;"><%= msg.sent/* .toDateString() */ %>  :</span>
             <hr>
         </p>
     <% }); %> 
        
 
 </div>
-<br>
 <br id="now">
 <form action="/" method="POST" class="sendmessage">
     <input type="text" name="text">

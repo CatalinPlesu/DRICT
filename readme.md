@@ -21,8 +21,10 @@ should be an social media like website
 - [ ] 
 ----------------------
 ### <p style="color:green">done things<p>
-- stole the navbar and the login form from codepen XD
-- tried to steal a chat template but, failed I falied and the message window is without style
+- undone
+    - stole the navbar and the login form from codepen XD
+    - tried to steal a chat template but, failed I falied and the message window is without style
 ----------------------
 ### <p style="color:red">issues<p>
-- CSS is a mess
+- o css though
+    - CSS was mess

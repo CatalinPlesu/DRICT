@@ -23,7 +23,6 @@ mongoose.connect("mongodb://localhost:27017/drict", {
     
     });
     app.post("/",(req,res)=>{
-        console.log(req.body.text);
         message.create({
             name: "anonim",
             text:req.body.text

@@ -6,4 +6,4 @@ const messages = new mongoose.Schema({
 	sent : { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model("mesage", messages);
+module.exports = mongoose.model("message", messages);
