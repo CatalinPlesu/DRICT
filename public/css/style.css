@@ -37,4 +37,10 @@
   height: 5rem;
   width: 100%;
 }
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
 /*# sourceMappingURL=style.css.map */

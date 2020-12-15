@@ -1,0 +1,18 @@
+<%- include('./partials/header') %>
+
+<table style="width: 100%">
+  <tr>
+    <td>ID</td>
+    <td>Username</td>
+    <td>Member since</td>
+  </tr>
+  <% usr.forEach(usr => {%>
+  <tr>
+    <td><%= usr._id %></td>
+    <td><%= usr.username %></td>
+    <td><%= usr.joined %></td>
+  </tr>
+  <% }); %>
+</table>
+
+<%- include('./partials/footer') %>
