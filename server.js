@@ -33,6 +33,12 @@ app.use(passport.session());
 passport.use(new passport_local(user.authenticate()));
 passport.serializeUser(user.serializeUser());
 passport.deserializeUser(user.deserializeUser());
+
+app.use((req, res, next) => {
+  res.locals.currentUser = req.user;
+  next();
+});
+
 //================
 //ROUTES
 //================
@@ -43,10 +49,17 @@ app.get("/", (req, res) => {
   });
 });
 app.post("/", (req, res) => {
-  message.create({
-    name: "anonim",
-    text: req.body.text
-  });
+  if (!res.locals.currentUser) {
+    message.create({
+      name: "anonim",
+      text: req.body.text
+    });
+  } else {
+    message.create({
+      name: res.locals.currentUser.username,
+      text: req.body.text
+    });
+  }
   res.redirect("/");
 });
 
@@ -66,7 +79,7 @@ app.post("/signup", (req, res) => {
         return res.render("signup");
       }
       passport.authenticate("local")(req, res, () => {
-        res.redirect("/users");
+        res.redirect("/");
       });
     }
   );
@@ -78,7 +91,7 @@ app.get("/login", (req, res) => {
 app.post(
   "/login",
   passport.authenticate("local", {
-    successRedirect: "/users",
+    successRedirect: "/",
     failureRedirect: "/login"
   }),
   (req, res) => {}

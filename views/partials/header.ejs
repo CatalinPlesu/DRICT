@@ -8,12 +8,23 @@
   </head>
   <body>
     <header class="header">
-      <a href="/#now"><h1>DRICT</h1> </a>
+      <a href="/"><h1>DRICT</h1> </a>
       <nav>
-        <a href="/login">Login</a>
-        <a href="/signup">Sign Up</a>
-        <a href="/users">Users Table</a>
-        <a href="/logout">Logout</a>
+        <% if(!currentUser){ %>
+        <li
+          class="<%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>"
+        >
+          <a href="/login">Login</a>
+        </li>
+        <li
+          class="<%= typeof page !== 'undefined' && page === 'signup' ? 'active' : '' %>"
+        >
+          <a href="/signup">Sign Up</a>
+        </li>
+        <% } else { %>
+        <li><a href="#">Signed In As <%= currentUser.username %></a></li>
+        <li><a href="/logout">Logout</a></li>
+        <% } %>
       </nav>
     </header>
     <div class="header_fix">qwerty</div>
