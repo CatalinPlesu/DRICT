@@ -16,10 +16,21 @@ function ajaxGet() {
   xhttp.send();
 }
 
-let ajaxPost = () => {
+function ajaxPost() {
   var xhr = new XMLHttpRequest();
-  xhr.open("psot", "/ajax");
-};
+  xhr.open("POST", "/ajax", true);
+
+  //Send the proper header information along with the request
+  xhr.setRequestHeader("Content-Type", "application/json");
+
+  xhr.onreadystatechange = function () {
+    // Call a function when the state changes.
+    if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+      // Request finished. Do processing here.
+    }
+  };
+  xhr.send(JSON.stringify({ text: text.value }));
+}
 
 var newmessage = () => {
   if (lastMsg != msg) {

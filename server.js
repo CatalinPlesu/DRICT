@@ -119,6 +119,7 @@ app.get("/ajax", (req, res) => {
 });
 app.post("/ajax", (req, res) => {
   // res.send(req.body.text);
+  console.log(req.body.text);
   if (!res.locals.currentUser) {
     message.create({
       name: "anonim",
@@ -140,7 +141,7 @@ function isLoggedIn(req, res, next) {
   res.redirect("/login");
 }
 
-const port = 3000;
+const port = 3333;
 app.listen(port, () => {
   console.log(`DRICT listening to port - ${port}`);
 });
