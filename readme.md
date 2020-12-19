@@ -5,7 +5,7 @@
 - IDEAS
   - friends or some kind of contacts
   - messaging
-  - to implement ajax 22%
+  - to implement ajax 23%
   - notifications
   - this time user should be able to upload the image directly || to more links to images
   - _voice_
