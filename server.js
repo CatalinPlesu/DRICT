@@ -7,7 +7,7 @@ mongoose.connect("mongodb://localhost:27017/drict", {
   useNewUrlParser: true,
   useFindAndModify: false,
   useCreateIndex: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
 });
 const message = require("./models/messages");
 const user = require("./models/users");
@@ -18,15 +18,16 @@ const passport_local_mongoose = require("passport-local-mongoose");
 
 app.use(
   require("express-session")({
-    secret: "random secret",
+    secret: "random secret => have no clue what does",
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
   })
 );
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(bodyparser.urlencoded({ extended: true }));
+app.use(bodyparser.json());
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -52,12 +53,12 @@ app.post("/", (req, res) => {
   if (!res.locals.currentUser) {
     message.create({
       name: "anonim",
-      text: req.body.text
+      text: req.body.text,
     });
   } else {
     message.create({
       name: res.locals.currentUser.username,
-      text: req.body.text
+      text: req.body.text,
     });
   }
   res.redirect("/");
@@ -70,7 +71,7 @@ app.get("/signup", (req, res) => {
 app.post("/signup", (req, res) => {
   user.register(
     new user({
-      username: req.body.username
+      username: req.body.username,
     }),
     req.body.password,
     (err, user) => {
@@ -92,7 +93,7 @@ app.post(
   "/login",
   passport.authenticate("local", {
     successRedirect: "/",
-    failureRedirect: "/login"
+    failureRedirect: "/login",
   }),
   (req, res) => {}
 );
@@ -108,6 +109,29 @@ app.get("/users", isLoggedIn, (req, res) => {
     res.render("users", { usr: usr });
   });
 });
+
+// AJAX requests test
+app.get("/ajax", (req, res) => {
+  message.find({}, (err, msg) => {
+    if (err) throw err;
+    res.send(JSON.stringify(msg[msg.length - 1]));
+  });
+});
+app.post("/ajax", (req, res) => {
+  // res.send(req.body.text);
+  if (!res.locals.currentUser) {
+    message.create({
+      name: "anonim",
+      text: req.body.text,
+    });
+  } else {
+    message.create({
+      name: res.locals.currentUser.username,
+      text: req.body.text,
+    });
+  }
+});
+
 //middleware to check if a user is logged in
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
@@ -117,6 +141,6 @@ function isLoggedIn(req, res, next) {
 }
 
 const port = 3000;
-app.listen(port, function () {
+app.listen(port, () => {
   console.log(`DRICT listening to port - ${port}`);
 });

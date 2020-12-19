@@ -1,11 +1,12 @@
 <%- include('./partials/header') %>
 
 <div class="message_box">
+    <!-- -->
     <%   msg.forEach(msg => {%> 
         <p>
             <a class="user" href="#"><%= msg.name %>  :</a><br>
            <%= msg.text %> 
-           <br><span class="time" style="font-size: 11px;"><%= msg.sent/* .toDateString() */ %>  :</span>
+           <br><span class="time" style="font-size: 11px;"><%= msg.sent/* .toDateString() */ %>  </span>
             <hr>
         </p>
     <% }); %> 
@@ -14,8 +15,9 @@
 </div>
 <hr id="now">
 <form action="/" method="POST" class="sendmessage">
-    <input type="text" name="text">
+    <input type="text" name="text" class="text">
     <button>send</button>
 </form>
-
+<button class="send">AJAX send XD</button>
+<br><br>
 <%- include('./partials/footer') %>
