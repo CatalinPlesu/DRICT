@@ -5,7 +5,7 @@
 - IDEAS
   - friends or some kind of contacts
   - messaging
-  - to implement ajax 55%
+  - to implement ajax
   - notifications
   - this time user should be able to upload the image directly || to more links to images
   - _voice_
@@ -22,16 +22,19 @@
   - [ ] group route
   - /users
 - [ ] db models
-
   - [x] 1 place were all messages go done
-  - [ ] route for each individual chats
   - [x] users
-
 - [x] pug in the db into the server
+  - [ ] route for each individual chats
 - [x] login / sign up page
   - [x] make them work
-- [ ] home page
-- [ ] ajax request message upload
+    - [ ] profiles with avatars, etc
+- [ ] appearence
+  - [ ] home page
+    - [ ] navbar
+  - [ ] authentification
+    - [ ] css
+- [ ] ajax request message upload 35%
 
 ---
 
@@ -39,7 +42,6 @@
 
 - possibiliy to write in a common chat while logged or as anonim
 - authentification
-- root route chat option
 
 ---
 
