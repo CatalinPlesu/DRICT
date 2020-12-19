@@ -1,6 +1,6 @@
 <%- include('./partials/header') %>
 
-<div class="message_box">
+<div class="messageBox">
     <!-- -->
     <%   msg.forEach(msg => {%> 
         <p>
@@ -14,10 +14,15 @@
 
 </div>
 <hr id="now">
-<form action="/" method="POST" class="sendmessage">
+<!--
+<form  action="/" method="POST" class="sendmessage" >
     <input type="text" name="text" class="text">
     <button>send</button>
-</form>
-<button class="send">AJAX send XD</button>
+</form> -->
+
+<input type="text" name="text" class="text">
+<button class="send">SEND</button>
+
 <br><br>
+<script src="js/ajax.js"></script>
 <%- include('./partials/footer') %>

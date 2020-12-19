@@ -1,30 +1,49 @@
 * {
   padding: 0;
+  margin: 0;
 }
-.sendmessage {
-  position: relative;
+
+.text {
+  width: 90%;
+  position: fixed;
   bottom: 0;
-  input {
-    width: 95%;
-    position: fixed;
-    bottom: 0;
-  }
-  button {
-    width: 5%;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-  }
+  left: 0;
+  font-size: x-large;
+  height: 5vh;
+  background-color: #74b46e;
 }
+.send {
+  width: 10%;
+  height: 5.6vh;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: #c4c566;
+  font-size: large;
+  color: #a13f99;
+}
+
 .header {
   position: fixed;
   top: 0;
   height: 5rem;
   background-color: rgb(120, 163, 212);
   width: 100%;
-  a,
-  h1 {
-    display: inline;
+
+  nav {
+    padding: 5px;
+    padding-top: 26px;
+    h1 {
+      color: #15ff15;
+      text-decoration: underline;
+      text-decoration-color: #15ff15;
+      display: inline;
+      float: left;
+    }
+    p {
+      display: inline;
+      float: right;
+    }
   }
 }
 .header_fix {
@@ -35,4 +54,9 @@ table,
 th,
 td {
   border: 1px solid black;
+}
+.messageBox {
+  background-color: rgb(202, 202, 202);
+  border: 1px solid black;
+  margin: 15px;
 }

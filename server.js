@@ -114,12 +114,10 @@ app.get("/users", isLoggedIn, (req, res) => {
 app.get("/ajax", (req, res) => {
   message.find({}, (err, msg) => {
     if (err) throw err;
-    res.send(JSON.stringify(msg[msg.length - 1]));
+    res.send(JSON.stringify(msg));
   });
 });
 app.post("/ajax", (req, res) => {
-  // res.send(req.body.text);
-  console.log(req.body.text);
   if (!res.locals.currentUser) {
     message.create({
       name: "anonim",

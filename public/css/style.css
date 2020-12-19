@@ -1,23 +1,27 @@
 * {
   padding: 0;
+  margin: 0;
 }
 
-.sendmessage {
-  position: relative;
-  bottom: 0;
-}
-
-.sendmessage input {
-  width: 95%;
+.text {
+  width: 90%;
   position: fixed;
   bottom: 0;
+  left: 0;
+  font-size: x-large;
+  height: 5vh;
+  background-color: #74b46e;
 }
 
-.sendmessage button {
-  width: 5%;
+.send {
+  width: 10%;
+  height: 5.6vh;
   position: fixed;
   bottom: 0;
   right: 0;
+  background-color: #c4c566;
+  font-size: large;
+  color: #a13f99;
 }
 
 .header {
@@ -28,9 +32,23 @@
   width: 100%;
 }
 
-.header a,
-.header h1 {
+.header nav {
+  padding: 5px;
+  padding-top: 26px;
+}
+
+.header nav h1 {
+  color: #15ff15;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #15ff15;
+          text-decoration-color: #15ff15;
   display: inline;
+  float: left;
+}
+
+.header nav p {
+  display: inline;
+  float: right;
 }
 
 .header_fix {
@@ -42,5 +60,11 @@ table,
 th,
 td {
   border: 1px solid black;
+}
+
+.messageBox {
+  background-color: #cacaca;
+  border: 1px solid black;
+  margin: 15px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -5,7 +5,6 @@
 - IDEAS
   - friends or some kind of contacts
   - messaging
-  - to implement ajax
   - notifications
   - this time user should be able to upload the image directly || to more links to images
   - _voice_
@@ -42,6 +41,7 @@
 
 - possibiliy to write in a common chat while logged or as anonim
 - authentification
+- AJAX requests which allow loading messages withot refreshing the page
 
 ---
 
@@ -50,6 +50,9 @@
 - 0 css
 - awful frontend
 - should refresh the page to see new messages
+- AJAX I think is to slow band uneficient because it make requests to the server every 0.1 seconds
+  - its even worse, this delay is summed ofr more users
+- some messages are sent or put in the wrong place
 
 ### for me to remember
 

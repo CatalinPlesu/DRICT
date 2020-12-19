@@ -6,24 +6,25 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>DRICT</title>
   </head>
-  <body>
+  <body> 
     <header class="header">
-      <a href="/"><h1>DRICT</h1> </a>
+     
       <nav>
+        <a href="/"><h1>DRICT</h1> </a>
         <% if(!currentUser){ %>
-        <li
+        <p
           class="<%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>"
         >
           <a href="/login">Login</a>
-        </li>
-        <li
+        </p>
+        <p
           class="<%= typeof page !== 'undefined' && page === 'signup' ? 'active' : '' %>"
         >
           <a href="/signup">Sign Up</a>
-        </li>
+        </p>
         <% } else { %>
-        <li><a href="#">Signed In As <%= currentUser.username %></a></li>
-        <li><a href="/logout">Logout</a></li>
+        <p><a href="#">Signed In As <%= currentUser.username %></a></p>
+        <p><a href="/logout">Logout</a></p>
         <% } %>
       </nav>
     </header>
