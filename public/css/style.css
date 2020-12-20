@@ -1,59 +1,18 @@
-* {
-  padding: 0;
-  margin: 0;
+body {
+  padding-top: 65px;
+  padding-bottom: 65px;
 }
 
-.text {
-  width: 90%;
+.stopForm .text {
   position: fixed;
-  bottom: 0;
   left: 0;
-  font-size: x-large;
-  height: 5vh;
-  background-color: #74b46e;
-}
-
-.send {
-  width: 10%;
-  height: 5.6vh;
-  position: fixed;
   bottom: 0;
-  right: 0;
-  background-color: #c4c566;
-  font-size: large;
-  color: #a13f99;
 }
 
-.header {
+.stopForm .send {
   position: fixed;
-  top: 0;
-  height: 5rem;
-  background-color: #78a3d4;
-  width: 100%;
-}
-
-.header nav {
-  padding: 5px;
-  padding-top: 26px;
-}
-
-.header nav h1 {
-  color: #15ff15;
-  text-decoration: underline;
-  -webkit-text-decoration-color: #15ff15;
-          text-decoration-color: #15ff15;
-  display: inline;
-  float: left;
-}
-
-.header nav p {
-  display: inline;
-  float: right;
-}
-
-.header_fix {
-  height: 5rem;
-  width: 100%;
+  right: 0;
+  bottom: 0;
 }
 
 table,

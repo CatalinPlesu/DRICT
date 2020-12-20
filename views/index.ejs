@@ -1,28 +1,30 @@
 <%- include('./partials/header') %>
+    <div class="container bg-dark text-white messageBox">
+        <% msg.forEach(msg=> {%>
+            <div class="row text-success">
+                <div class="col-sm">
+                    <%= msg.name %>
+                </div>
+                <div class="col-sm-8">
+                    <div class="alert alert-dark">
+                        <%= msg.text %>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <%= msg.sent/* .toDateString() */ %>
+                </div>
+            </div>
+            <% }); %>
 
-<div class="messageBox">
-    <!-- -->
-    <%   msg.forEach(msg => {%> 
-        <p>
-            <a class="user" href="#"><%= msg.name %>  :</a><br>
-           <%= msg.text %> 
-           <br><span class="time" style="font-size: 11px;"><%= msg.sent/* .toDateString() */ %>  </span>
-            <hr>
-        </p>
-    <% }); %> 
-       
+    </div>
 
-</div>
-<hr id="now">
-<!--
-<form  action="/" method="POST" class="sendmessage" >
-    <input type="text" name="text" class="text">
-    <button>send</button>
-</form> -->
-<form action="" class="stopForm">
-<input type="text" name="text" class="text">
-<button class="send">SEND</button>
-</form>
-<br><br>
-<script src="js/ajax.js"></script>
-<%- include('./partials/footer') %>
+    <nav class="navbar fixed-bottom navbar-dark bg-dark">
+        <form class="form-inline stopForm">
+            <input class="form-control mr-sm-2 bg-dark text-white text" type="search" placeholder="Type...."
+                aria-label="Search">
+            <button class="btn btn-success my-2 my-sm-0 send" type="submit">SEND</button>
+        </form>
+    </nav>
+
+    <script src="js/ajax.js"></script>
+    <%- include('./partials/footer') %>

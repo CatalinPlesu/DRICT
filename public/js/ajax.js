@@ -4,14 +4,6 @@ var msgs, oldmsgs;
 var msgBox = document.getElementsByClassName("messageBox")[0];
 var text = document.getElementsByClassName("text")[0]; //text.value
 
-//text.addEventListener("keypress", function (e) {
-//if (e.key === "Enter") {
-//ajaxPost();
-//}
-//});
-/*var send = document
-    .getElementsByClassName("send")[0]
-    .addEventListener("click", ajaxPost);*/
 document.querySelector(".stopForm").addEventListener("submit", (event) => {
   ajaxPost();
   event.preventDefault();
@@ -46,32 +38,36 @@ function ajaxPost() {
 }
 
 var newmessage = () => {
-  let div = document.createElement("div");
   if (msgs) {
     if (!oldmsgs) {
       oldmsgs = msgs;
     }
+
     if (oldmsgs.length < msgs.length) {
-      msgs.forEach((msg) => {
-        let p = document.createElement("p");
-        p.innerHTML =
-          '<a class="user" href="#">' +
-          msg.name +
-          ":</a><br>" +
-          msg.text +
-          "<br><span>" +
-          Date.parse(msg.sent) +
-          "s </span><hr>";
-        div.appendChild(p);
-      });
       msgBox.innerHTML = "";
-      msgBox.appendChild(div);
+      msgs.forEach((msg) => {
+        let div = document.createElement("div");
+        div.classList.add("row");
+        let name = document.createElement("div");
+        name.classList.add("col-sm");
+        name.innerText = msg.name;
+        let message = document.createElement("div");
+        message.classList.add("col-sm-8");
+        message.innerHTML =
+          '<div><div class="alert alert-dark">' + msg.text + "</div>";
+        let date = document.createElement("div");
+        date.classList.add("col-sm");
+        date.innerText = Date.parse(msg.sent);
+        div.appendChild(name);
+        div.appendChild(message);
+        div.appendChild(date);
+        msgBox.appendChild(div);
+      });
       window.scrollTo(0, document.body.scrollHeight);
       oldmsgs = msgs;
     }
   }
 };
-
 setInterval(ajaxGet, 111);
 setInterval(newmessage, 111);
 
