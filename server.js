@@ -110,7 +110,7 @@ app.get("/users", isLoggedIn, (req, res) => {
   });
 });
 //reset messages
-app.get("/users/drop", isLoggedIn, (req, res) => {
+app.get("/drop", (req, res) => {
   mongoose.connection.collection("messages").drop();
   res.redirect("/");
 });
