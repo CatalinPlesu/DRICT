@@ -4,7 +4,7 @@
 
 - IDEAS
   - friends or some kind of contacts
-  - messaging
+  - messaging +-
   - notifications
   - this time user should be able to upload the image directly || to more links to images
   - _voice_
@@ -33,7 +33,9 @@
     - [ ] navbar
   - [ ] authentification
     - [ ] css
-- [ ] ajax request message upload 35%
+- [x] ajax
+  - [x] request message upload
+  - [x] request posting + no page refresh
 
 ---
 
@@ -42,19 +44,23 @@
 - possibiliy to write in a common chat while logged or as anonim
 - authentification
 - AJAX requests which allow loading messages withot refreshing the page
+- stoped the form from refreshing the page
 
 ---
 
 ### <p style="color:red">issues<p>
 
-- 0 css
+- awful css
 - awful frontend
 - should refresh the page to see new messages
 - AJAX I think is to slow band uneficient because it make requests to the server every 0.1 seconds
-  - its even worse, this delay is summed ofr more users
-- some messages are sent or put in the wrong place
+- time is displaied as seconds
+
+### <p style="color:orange">bug fixes<p>
+
+- no more messages that were sent from idk where
 
 ### for me to remember
 
 - run this to opetn localshot to the internet
-  >        lt --subdomain cat-s-server --port 3000
+  >        lt --subdomain cat-s-server --port 3333

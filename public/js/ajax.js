@@ -1,16 +1,22 @@
 window.scrollTo(0, document.body.scrollHeight);
 
-var msgs;
+var msgs, oldmsgs;
 var msgBox = document.getElementsByClassName("messageBox")[0];
 var text = document.getElementsByClassName("text")[0]; //text.value
-var send = document
-  .getElementsByClassName("send")[0]
-  .addEventListener("click", ajaxPost);
-text.addEventListener("keypress", function (e) {
-  if (e.key === "Enter") {
-    ajaxPost();
-  }
+
+//text.addEventListener("keypress", function (e) {
+//if (e.key === "Enter") {
+//ajaxPost();
+//}
+//});
+/*var send = document
+    .getElementsByClassName("send")[0]
+    .addEventListener("click", ajaxPost);*/
+document.querySelector(".stopForm").addEventListener("submit", (event) => {
+  ajaxPost();
+  event.preventDefault();
 });
+
 function ajaxGet() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
@@ -42,21 +48,27 @@ function ajaxPost() {
 var newmessage = () => {
   let div = document.createElement("div");
   if (msgs) {
-    msgs.forEach((msg) => {
-      let p = document.createElement("p");
-      p.innerHTML =
-        '<a class="user" href="#">' +
-        msg.name +
-        ":</a><br>" +
-        msg.text +
-        "<br><span>" +
-        msg.sent +
-        "</span><hr>";
-      div.appendChild(p);
-    });
-    msgBox.innerHTML = "";
-    msgBox.appendChild(div);
-    window.scrollTo(0, document.body.scrollHeight);
+    if (!oldmsgs) {
+      oldmsgs = msgs;
+    }
+    if (oldmsgs.length < msgs.length) {
+      msgs.forEach((msg) => {
+        let p = document.createElement("p");
+        p.innerHTML =
+          '<a class="user" href="#">' +
+          msg.name +
+          ":</a><br>" +
+          msg.text +
+          "<br><span>" +
+          Date.parse(msg.sent) +
+          "s </span><hr>";
+        div.appendChild(p);
+      });
+      msgBox.innerHTML = "";
+      msgBox.appendChild(div);
+      window.scrollTo(0, document.body.scrollHeight);
+      oldmsgs = msgs;
+    }
   }
 };
 
