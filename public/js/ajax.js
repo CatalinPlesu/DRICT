@@ -48,15 +48,16 @@ var newmessage = () => {
       msgs.forEach((msg) => {
         let div = document.createElement("div");
         div.classList.add("row");
+        div.classList.add("text-success");
         let name = document.createElement("div");
-        name.classList.add("col-sm");
+        name.classList.add("col-md");
         name.innerText = msg.name;
         let message = document.createElement("div");
-        message.classList.add("col-sm-8");
+        message.classList.add("col-md-8");
         message.innerHTML =
           '<div><div class="alert alert-dark">' + msg.text + "</div>";
         let date = document.createElement("div");
-        date.classList.add("col-sm");
+        date.classList.add("col-md");
         date.innerText = Date.parse(msg.sent);
         div.appendChild(name);
         div.appendChild(message);

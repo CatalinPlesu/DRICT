@@ -109,7 +109,11 @@ app.get("/users", isLoggedIn, (req, res) => {
     res.render("users", { usr: usr });
   });
 });
-
+//reset messages
+app.get("/users/drop", isLoggedIn, (req, res) => {
+  mongoose.connection.collection("messages").drop();
+  res.redirect("/");
+});
 // AJAX requests test
 app.get("/ajax", (req, res) => {
   message.find({}, (err, msg) => {
