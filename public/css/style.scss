@@ -2,7 +2,18 @@ body {
   padding-top: 65px;
   padding-bottom: 65px;
 }
-
+.stopForm {
+  .text {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+  }
+  .send {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+  }
+}
 table,
 th,
 td {
