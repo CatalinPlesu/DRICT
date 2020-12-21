@@ -2,15 +2,15 @@
     <div class="container bg-dark text-white messageBox">
         <% msg.forEach(msg=> {%>
             <div class="row text-success">
-                <div class="col-md">
+                <div class="col-sm">
                     <%= msg.name %>
                 </div>
-                <div class="col-md-8">
+                <div class="col-sm-8">
                     <div class="alert alert-dark">
                         <%= msg.text %>
                     </div>
                 </div>
-                <div class="col-md">
+                <div class="col-sm">
                     <%= msg.sent/* .toDateString() */ %>
                 </div>
             </div>
