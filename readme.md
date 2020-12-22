@@ -1,6 +1,6 @@
 # a new web app project
 
-## should be an (social media)-chat-andsomethingelse like website
+## should be an (social media)-chat-dicord-andsomethingelse like, website
 
 - IDEAS
   - friends or some kind of contacts
@@ -45,20 +45,18 @@
 - authentification
 - AJAX requests which allow loading messages withot refreshing the page
 - stoped the form from refreshing the page
+- used bootstrap
 
 ---
 
 ### <p style="color:red">issues<p>
 
-- awful css
-- awful frontend
-- should refresh the page to see new messages
-- AJAX I think is to slow band uneficient because it make requests to the server every 0.1 seconds
-- time is displaied as seconds
+- AJAX I think is to slow band uneficient because it make requests to the server every 0.111 seconds
 
 ### <p style="color:orange">bug fixes<p>
 
 - no more messages that were sent from idk where
+  - this commit for sure
 
 ### for me to remember
 
