@@ -133,6 +133,7 @@ app.post("/ajax", (req, res) => {
       text: req.body.text,
     });
   }
+  res.sendStatus(200);
 });
 
 //middleware to check if a user is logged in
