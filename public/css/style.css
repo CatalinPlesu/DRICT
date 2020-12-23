@@ -2,4 +2,11 @@ body {
   padding-top: 65px;
   padding-bottom: 65px;
 }
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 2.5px solid  #1B7A52;
+}
 /*# sourceMappingURL=style.css.map */
