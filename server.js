@@ -112,7 +112,7 @@ app.get("/ajax", (req, res) => {
 app.post("/ajax", (req, res) => {
   if (!res.locals.currentUser) {
     message.create({
-      name: "anonim",
+      name: req.body.anonim,
       text: req.body.text,
     });
   } else {
@@ -137,7 +137,7 @@ app.get("/dropM", (req, res) => {
   res.redirect("/");
 });
 app.get("/dropU", (req, res) => {
-  mongoose.connection.collection("messages").drop();
+  mongoose.connection.collection("users").drop();
   res.redirect("/");
 });
 //middleware to check if a user is logged in

@@ -1,14 +1,23 @@
 <%- include('./partials/header') %>
-<br><br><br><br><br><br><br><br><br>
-
+ 
 <div class="login">Sign up</div>
-<h1 class="eula">By signing up you agree to the ridiculously long terms that you didn't bother to read</h1>
-<form action="/signup" method="POST">
-  <label for="username">Username</label>
-  <input type="text" name="username" id="username"><br>
-  <label for="password">Password</label>
-  <input type="password"  name="password" id="password">
-  <input type="submit" id="submit" value="Submit">
-</form>
+<div class="card">
+  <div class="card-body">
+    <h1 class="h1 text-success">By signing up you agree to the ridiculously long terms that you didn't bother to read</h1>
+  </div>
+</div>
+<br><br><br>
+<section class="d-flex justify-content-center">
+  <div class="card text-success bg-light mb-3">
+    <div class="card-header">Sign up</div>
+    <div class="card-body">
+<form action="/signup" method="POST"  style="width: 22rem">
+  <input type="text" name="username"   class="form-control" >
+  <label class="form-label text-success" for="form1Example1" style="margin-left: 0px;">Username</label>
+  <input type="password" name="password"  class="form-control" >
+  <label class="form-label  text-success"  name="password" style="margin-left: 0px;">Password</label>
 
+  <input type="submit"  style="width: 22rem" class="btn btn-success btn-block" id="submit" value="Submit">
+</form>
+</section>
 <%- include('./partials/footer') %>

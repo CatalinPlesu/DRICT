@@ -1,34 +1,24 @@
 <%- include('./partials/header') %>
-  <br><br><br><br><br><br><br><br><br>
 
   <div class="login">Login</div>
-  <h1 class="eula">By logging in you agree to the ridiculously long terms that you didn't bother to read</h1>
-  <form action="/login" method="POST">
-    <label for="username">Username</label>
-    <input type="text" name="username" id="username"><br>
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password">
-    <input type="submit" id="submit" value="Submit">
-  </form>
-    
-
-
+  <div class="card">
+    <div class="card-body">
+      <h1 class="h1 text-success">By logging in you agree to the ridiculously long terms that you didn't bother to read</h1>
+    </div>
+  </div>
+  <br><br><br>
   <section class="d-flex justify-content-center">
-    <form style="width: 22rem">
-      <!-- Email input -->
-      <div class="form-outline mb-4">
-        <input type="text" class="form-control">
-        <label class="form-label text-success" for="form1Example1" style="margin-left: 0px;">Username</label>
-      <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 88.8px;"></div><div class="form-notch-trailing"></div></div></div>
+    <div class="card text-success bg-light mb-3">
+      <div class="card-header">Log in</div>
+      <div class="card-body">
+  <form action="/login" method="POST"  style="width: 22rem">
+    <input type="text" name="username"   class="form-control" >
+    <label class="form-label text-success" for="form1Example1" style="margin-left: 0px;">Username</label>
+    <input type="password" name="password"  class="form-control" >
+    <label class="form-label  text-success"  name="password" style="margin-left: 0px;">Password</label>
 
-      <!-- Password input -->
-      <div class="form-outline mb-4">
-        <input type="password" class="form-control">
-        <label class="form-label  text-success" style="margin-left: 0px;">Password</label>
-      <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 64px;"></div><div class="form-notch-trailing"></div></div></div>
-  
-      <!-- Submit button -->
-      <button style="width: 22rem" type="button" class="btn btn-success btn-block">Sign in</button>
-    </form>
+    <input type="submit"  style="width: 22rem" class="btn btn-success btn-block" id="submit" value="Submit">
+  </form>
   </section>
+
   <%- include('./partials/footer') %>

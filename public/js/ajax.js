@@ -45,7 +45,7 @@ function ajaxPost() {
       // Request finished. Do processing here.
     }
   };
-  xhr.send(JSON.stringify({ text: text.value }));
+  xhr.send(JSON.stringify({ anonim: anonim, text: text.value }));
 }
 
 var newmessage = () => {
