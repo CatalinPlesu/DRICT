@@ -22,7 +22,7 @@ function ajaxGet() {
       msgs = JSON.parse(this.responseText);
       if (msgs) {
         if (!oldmsgs) {
-          oldmsgs = 0;
+          oldmsgs = msgs.length == 1 ? 0 : msgs.length;
         }
         if (oldmsgs != msgs.length) {
           newmessage();
@@ -49,21 +49,20 @@ function ajaxPost() {
 }
 
 var newmessage = () => {
-  msgBox.innerHTML = "";
-  msgs.forEach((msg) => {
+  for (let i = oldmsgs; i < msgs.length; i++) {
     let div = document.createElement("div");
     div.classList.add("row");
     div.classList.add("text-success");
     let name = document.createElement("div");
     name.classList.add("col-lg");
-    name.innerText = msg.name;
+    name.innerText = msgs[i].name;
     let message = document.createElement("div");
     message.classList.add("col-lg-8");
     message.innerHTML =
-      '<div><div class="alert alert-dark">' + msg.text + "</div>";
+      '<div><div class="alert alert-dark">' + msgs[i].text + "</div>";
     let date = document.createElement("div");
     date.classList.add("col-lg");
-    let t = new Date(msg.sent);
+    let t = new Date(msgs[i].sent);
     date.innerText =
       t.getDate() +
       "D " +
@@ -79,7 +78,7 @@ var newmessage = () => {
     div.appendChild(message);
     div.appendChild(date);
     msgBox.appendChild(div);
-  });
+  }
   window.scrollTo(0, document.body.scrollHeight);
   beep();
 };
