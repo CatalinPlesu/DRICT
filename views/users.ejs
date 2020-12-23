@@ -1,18 +1,17 @@
 <%- include('./partials/header') %>
 
-<table style="width: 100%">
-  <tr>
-    <td>ID</td>
-    <td>Username</td>
-    <td>Member since</td>
+<table class="table table-striped table-dark">
+  <tr class=" text-success">
+    <th  scope="col">ID</td>
+    <th  scope="col">Username</td>
+    <th  scope="col">Member since</td>
   </tr>
   <% usr.forEach(usr => {%>
-  <tr>
+  <tr class=" text-success">
     <td><%= usr._id %></td>
-    <td><%= usr.username %></td>
+    <th scope="row"><%= usr.username %></td>
     <td><%= usr.joined %></td>
   </tr>
   <% }); %>
 </table>
-
 <%- include('./partials/footer') %>

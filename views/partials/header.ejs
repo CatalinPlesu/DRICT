@@ -25,19 +25,22 @@
         <ul class="navbar-nav ">
           <% if(!currentUser){ %>
             <li class="nav-item active">
-              <a class="nav-link" href="/login">Login</a>
+              <a class="nav-link text-success href="/login">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/signup">Sign Up</a>
+              <a class="nav-link text-success" href="/signup">Sign Up</a>
             </li>
             <% } else { %>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                <a class="nav-link dropdown-toggle  text-success" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
                   aria-haspopup="true" aria-expanded="false">
                   <%= currentUser.username %>
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="/logout">Logout</a>
+                <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item text-success" href="/logout">LogoutA</a>
+                  <a class="dropdown-item text-success" href="/logout">LogoutB</a>
+                  <a class="dropdown-item text-success" href="/logout">LogoutC</a>
+                  <a class="dropdown-item text-success" href="/logoutF">LogoutF</a>
                 </div>
               </li>
               <% } %>

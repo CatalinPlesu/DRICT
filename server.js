@@ -102,18 +102,6 @@ app.get("/logout", (req, res) => {
   req.logout();
   res.redirect("/");
 });
-//USERS TABLE
-app.get("/users", isLoggedIn, (req, res) => {
-  user.find({}, (err, usr) => {
-    if (err) throw err;
-    res.render("users", { usr: usr });
-  });
-});
-//reset messages
-app.get("/drop", (req, res) => {
-  mongoose.connection.collection("messages").drop();
-  res.redirect("/");
-});
 // AJAX requests test
 app.get("/ajax", (req, res) => {
   message.find({}, (err, msg) => {
@@ -135,7 +123,23 @@ app.post("/ajax", (req, res) => {
   }
   res.sendStatus(200);
 });
-
+//AUXILIAR
+//USERS TABLE
+app.get("/users", isLoggedIn, (req, res) => {
+  user.find({}, (err, usr) => {
+    if (err) throw err;
+    res.render("users", { usr: usr });
+  });
+});
+//reset messages
+app.get("/dropM", (req, res) => {
+  mongoose.connection.collection("messages").drop();
+  res.redirect("/");
+});
+app.get("/dropU", (req, res) => {
+  mongoose.connection.collection("messages").drop();
+  res.redirect("/");
+});
 //middleware to check if a user is logged in
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {

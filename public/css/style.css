@@ -2,22 +2,4 @@ body {
   padding-top: 65px;
   padding-bottom: 65px;
 }
-
-.stopForm .text {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-}
-
-.stopForm .send {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-}
-
-table,
-th,
-td {
-  border: 1px solid black;
-}
 /*# sourceMappingURL=style.css.map */
