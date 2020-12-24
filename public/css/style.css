@@ -7,6 +7,23 @@ hr {
   margin-top: 1rem;
   margin-bottom: 1rem;
   border: 0;
-  border-top: 2.5px solid  #1B7A52;
+  border-top: 2.5px solid #1b7a52;
+}
+
+.img_tumb {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+img:hover {
+  width: 200px;
+  height: 200px;
+}
+
+img {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 /*# sourceMappingURL=style.css.map */

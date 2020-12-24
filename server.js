@@ -72,6 +72,7 @@ app.post("/signup", (req, res) => {
   user.register(
     new user({
       username: req.body.username,
+      avatar: req.body.avatar,
     }),
     req.body.password,
     (err, user) => {
@@ -113,11 +114,15 @@ app.post("/ajax", (req, res) => {
   if (!res.locals.currentUser) {
     message.create({
       name: req.body.anonim,
+      uid: null,
+      uav: req.body.avatar,
       text: req.body.text,
     });
   } else {
     message.create({
       name: res.locals.currentUser.username,
+      uid: res.locals.currentUser._id,
+      uav: res.locals.currentUser.avatar,
       text: req.body.text,
     });
   }

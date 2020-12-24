@@ -3,8 +3,9 @@ const passport_local_mongoose = require("passport-local-mongoose");
 
 const users = new mongoose.Schema({
   username: String,
+  avatar: String,
   password: String,
-  joined: { type: Date, default: Date.now }
+  joined: { type: Date, default: Date.now },
 });
 
 users.plugin(passport_local_mongoose);

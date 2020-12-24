@@ -45,7 +45,9 @@ function ajaxPost() {
       // Request finished. Do processing here.
     }
   };
-  xhr.send(JSON.stringify({ anonim: anonim, text: text.value }));
+  xhr.send(
+    JSON.stringify({ anonim: anonim, avatar: avatar, text: text.value })
+  );
 }
 
 var newmessage = () => {
@@ -53,17 +55,13 @@ var newmessage = () => {
     let div = document.createElement("div");
     div.classList.add("row");
     div.classList.add("text-success");
-    let name = document.createElement("div");
-    name.classList.add("col-lg");
-    name.innerText = msgs[i].name;
-    let message = document.createElement("div");
-    message.classList.add("col-lg-8");
-    message.innerHTML =
-      '<div><div class="alert alert-dark">' + msgs[i].text + "</div>";
-    let date = document.createElement("div");
-    date.classList.add("col-lg");
     let t = new Date(msgs[i].sent);
-    date.innerText =
+    div.innerHTML =
+      '<div class="col-lg"><div class="row"> <div class="col-lg-4"> <img src="' +
+      msgs[i].uav +
+      '" alt="" width="50px" style="border-radius: 45px;"> </div><div class="col-lg"><b style="text-decoration:underline;">' +
+      msgs[i].name +
+      "</b><br>" +
       t.getDate() +
       "D " +
       t.getMonth() +
@@ -73,10 +71,10 @@ var newmessage = () => {
       t.getMinutes() +
       "M " +
       t.getSeconds() +
-      "S";
-    div.appendChild(name);
-    div.appendChild(message);
-    div.appendChild(date);
+      "S" +
+      ' </div></div></div> <div class="col-lg-10">' +
+      msgs[i].text +
+      "</div>  ";
     msgBox.appendChild(div);
   }
   window.scrollTo(0, document.body.scrollHeight);

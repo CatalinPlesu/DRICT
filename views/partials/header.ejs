@@ -32,8 +32,9 @@
             </li>
             <% } else { %>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle  text-success" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle  text-success" href="#" id="navbarDropdownMenuLink"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <img src="<%= currentUser.avatar %>" alt="" width="50px" style="border-radius: 45px;">
                   <%= currentUser.username %>
                 </a>
                 <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink">
@@ -48,4 +49,6 @@
       </div>
     </div>
   </nav>
- <div class="container"> <hr></div>
+  <div class="container">
+    <hr>
+  </div>

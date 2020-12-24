@@ -3,20 +3,25 @@
         <% msg.forEach(msg=> {%>
             <div class="row text-success">
                 <div class="col-lg">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe2G-lhcGnbNyhYvLbLTyIh88B1_WFAJCz5w&usqp=CAU"
-                        alt="" width="50px" style="border-radius: 45px;">
-                    <%= msg.name %> <br>
-                        <%= msg.sent.toDateString() %>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img src=" <%= msg.uav %> " alt="" width="50px" style="border-radius: 45px;">
+                        </div>
+                        <div class="col-lg">
+                            <b style="text-decoration:underline;">
+                                <%= msg.name %>
+                            </b> <br>
+                            <%= msg.sent.toDateString() %>
+                        </div>
+                    </div>
 
                 </div>
-                <div class="col-lg-8">
+                <div class="col-lg-10">
 
                     <%= msg.text %>
 
                 </div>
-                <div class="col-lg">
 
-                </div>
                 <hr>
             </div>
             <% }); %>
